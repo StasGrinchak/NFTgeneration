@@ -49,7 +49,7 @@ def userpage(request):
 	user_photo = Profile.objects.get(user=request.user)
 	return render(request, "profileUser/profile.html", {"user":request.user, "user_form":user_form, "user_photo": user_photo, })
 
-# def take_image(request):
-# 	image = ImageNFT.objects.filter(author=request.user)
-# 	print(image)
-# 	return image
+def take_image(request):
+	image = ImageNFT.objects.filter(author=request.user)
+	print(image)
+	return image
