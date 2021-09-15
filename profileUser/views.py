@@ -40,4 +40,16 @@ def login_request(request):
 def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.")
-	return redirect("login")
+	return redirect("home")
+
+def userpage(request):
+	if not request.user.is_authenticated == True:
+		return redirect("login")
+	user_form = UserForm(instance=request.user)
+	user_photo = Profile.objects.get(user=request.user)
+	return render(request, "profileUser/profile.html", {"user":request.user, "user_form":user_form, "user_photo": user_photo, })
+
+# def take_image(request):
+# 	image = ImageNFT.objects.filter(author=request.user)
+# 	print(image)
+# 	return image

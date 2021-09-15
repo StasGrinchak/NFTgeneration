@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="card-text">
+        <img src="{{ user_photo.photo.url }}" alt="Photo"/>
+        <p class="text-muted mb-0" style="font-size: 18px">Username:</p>
+        <p>{{ user.username }}</p>
+        <p class="text-muted mb-0" style="font-size: 18px">Name:</p>
+        <p>{{ user.first_name }}</p>
+        <p class="text-muted mb-0" style="font-size: 18px">Email:</p>
+        <p>{{ user.email }} </p>
+        <a href="{% url 'home' %}">To main</a>
+    </div>
+
+</body>
+</html>
