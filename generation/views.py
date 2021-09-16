@@ -17,7 +17,7 @@ def createIMG(request):
         # Запускаем скрипт для Создания картинки
         all =Subscriber.objects.all()
     form =SubscriberForm()
-    return render(request, 'create.html',locals())
+    return render(request, 'html/create.html',locals())
 
 
 
@@ -28,7 +28,7 @@ def upload(request):
         fs = FileSystemStorage()
         fs.save(upload_file.name,upload_file)
         # Запустить скрипт по обнаружению ТОКЕНА на картинке
-    return render(request,'generation/upload.html')
+    return render(request,'html/upload.html')
 
 def download(request,fl):
     direct =''
